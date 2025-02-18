@@ -9,7 +9,7 @@
     
     <title>
         
-            20250207 |
+            CS制作木马的简易小教程（纯娱乐不要拿来干坏事！） |
         
         Lwwww&#39;s Blog
     </title>
@@ -231,7 +231,7 @@
             <div class="post-content-bottom border-box">
                 
                     <div class="post-title">
-                        20250207
+                        CS制作木马的简易小教程（纯娱乐不要拿来干坏事！）
                     </div>
                 
 
@@ -259,13 +259,13 @@
         
             <span class="meta-info-item post-create-date">
                 <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
-                <span class="datetime">2025-02-07 12:34:44</span>
+                <span class="datetime">2025-02-18 18:00:57</span>
             </span>
 
             
                 <span class="meta-info-item post-update-date">
                     <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                    <span class="datetime" data-updated="Fri Feb 07 2025 12:50:15 GMT+0800">2025-02-07 12:50:15</span>
+                    <span class="datetime" data-updated="Tue Feb 18 2025 19:05:37 GMT+0800">2025-02-18 19:05:37</span>
                 </span>
             
         
@@ -276,7 +276,7 @@
             <span class="post-tag meta-info-item border-box">
                 <ul class="post-tag-ul">
                     
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E9%9A%8F%E7%AC%94/">-随笔</a></li>
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/WEB-%E6%B8%97%E9%80%8F-%E6%9C%A8%E9%A9%AC/">-WEB -渗透 -木马</a></li>
                         
                     
                 </ul>
@@ -286,12 +286,12 @@
         
         
             <span class="meta-info-item post-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>274 Words</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>904 Words</span>
             </span>
         
         
             <span class="meta-info-item post-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>1 Mins</span>
+                <i class="icon fas fa-clock"></i>&nbsp;<span>3 Mins</span>
             </span>
         
         
@@ -313,10 +313,104 @@
                     
 
                     
-                         <p>今天12点多因为太饿了所以决定早睡，但是没有早起，赖床赖到八点五十，起床把昨天买的手擀面煮上了，放了一点鸡精 耗油 生抽 和好几个鸡蛋。美美的吃完了早饭，香拽了！然后就是困~ 晕碳吗？</p>
-<p>吃完发现体重多了快两公斤，但是我感觉我进肚里的东西还没一斤呢。反复称了好几次，称到了一个满意的体重,我才放过不听话的体重秤。本来打算吃完就去运动消化一下，别吃胖了前功尽弃，但是去锻炼的路上突然遭遇罪大恶极怨念缠身的恶床，为了拯救世界不让它破坏世界和平，我毅然决然变成小猪🐖睡服它。</p>
-<p>一直睡到11点半它才肯罢休，真是 太可恶了。二次起床之后我去给pwnpwn（胖胖）喂奶，它跟恶鬼一样裹着奶嘴就吨吨吸，鼻子全是奶泡也停不下来。</p>
-<p>今天真爽，嘻嘻。吃饭真好👍</p>
+                         <p>想要制作小木马控制一下你的亲朋好友或者窥探一下女神的隐私吗</p>
+<p>那就让我来教教你</p>
+<p>首先就是得有个VPS云服务器，我就只学了cs制作exe文件的木马还有一种shellcode我还没研究所以就以window下的exe当例子咯</p>
+<p>先去极核那边把这个cs下上<a class="link"   target="_blank" rel="noopener" href="https://get-shell.com/1554.html" >https://get-shell.com/1554.html<i class="fas fa-external-link-alt"></i></a></p>
+<p>强烈推荐极核网站真的很好🤩</p>
+<p>然后先说一下这个的原理，我找到的几个教程全是步骤没有原理导致我笨笨的在kali里面捯饬</p>
+<p>cs的使用是分为客户端和服务端的，服务端必须是linux环境，然后按照公网的来的话，就是需要你在Linux环境下开启server的服务，让cs客户端能够和服务端连接上去，只有这样cs才能启动，</p>
+<p>然后放几个我看的教程链接	<a class="link"   target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/5uZiJECpPw8pfLc0JstZ0g" >工具分享 | CobaltStrike安装与简单使用<i class="fas fa-external-link-alt"></i></a>          </p>
+<p>我的服务器的环境是centos 这个是<a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/Xx47585874/article/details/124849471?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522e28769ae6fb6d0ed23b60bd85ff4db25%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=e28769ae6fb6d0ed23b60bd85ff4db25&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-124849471-null-null.142%5Ev101%5Epc_search_result_base3&utm_term=centos%E5%AE%89%E8%A3%85java&spm=1018.2226.3001.4187" >centos的java环境配置<i class="fas fa-external-link-alt"></i></a></p>
+<p>首先就是服务端需要Java环境,具体的其他操作可以去网上查，我只说我用的最方便无脑的方法</p>
+<p>利用<a class="link"   target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=yum&spm=1001.2101.3001.7020" >yum<i class="fas fa-external-link-alt"></i></a>源来安装jdk（此方法不需要配置环境变量）<br> 查看yum库中的java安装包 ：<code>yum -y list java*</code><br> 安装需要的jdk版本的所有java程序：yum -y install java-1.8.0-openjdk* (安装完之后，默认的安装目录是在: &#x2F;usr&#x2F;lib&#x2F;<a class="link"   target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=jvm&spm=1001.2101.3001.7020" >jvm<i class="fas fa-external-link-alt"></i></a>&#x2F;java-1.8.0-openjdk-1.8.0.151-1.b12.el7_4.x86_64)</p>
+<p>然后输入java -version</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="http://images.lwwww.top/images/20250218190410161.png"
+                        alt="image-20250218183004910"
+                 ></p>
+<p>这样就是正常了</p>
+<p>然后这个时候你的安装包应该是下好了解压之后是这样的</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="http://images.lwwww.top/images/20250218190415756.png"
+                        alt="image-20250218183113424"
+                 ></p>
+<p>去把Server想办法放到服务端里面，用什么协议也好，传zip也行，我是直接finalshell拖进去的，完成后进入到Server的目录下对teamserver文件增加执行权限 	<code>chmod +x teamserver</code> 	然后就得把这个服务端的服务起来了</p>
+<p>在下一步之前你要知道如果你是买的云服务器的话，你必须要干的一件事就是去安全组里面把入规则改一下，运行all 对你设定的端口进行tcp连接，如果不太懂得话那就按照我这个样子改一下就欧克</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="http://images.lwwww.top/images/20250218190420845.png"
+                        alt="image-20250218184007106"
+                 ></p>
+<p>记得也要在Linux本机上面开放端口</p>
+<p>开放端口</p>
+<p><strong>firewall-cmd –zone&#x3D;public –add-port&#x3D;5672&#x2F;tcp –permanent</strong>  # 开放5672端口</p>
+<p><strong>firewall-cmd –zone&#x3D;public –remove-port&#x3D;5672&#x2F;tcp –permanent</strong> #关闭5672端口</p>
+<p><strong>firewall-cmd –reload</strong>  # 配置立即生效</p>
+<p>改成50050端口就行这是cs默认得，记得一定要进行配置立即生效的命令要不然要等很久</p>
+<p>1、启动服务端。</p>
+<p>.&#x2F;teamserver 127.0.0.1 passwd    		#127.0.0.1服务端真实IP（最好写公网ip） 后面密码随意。</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="http://images.lwwww.top/images/20250218190513450.png"
+                        alt="image-20250218183724547"
+                 ></p>
+<p>大概是这样，如果报错了记得问ai解决，应该是问题不大了</p>
+<p>然后就是去客户端把cs连上了</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="http://images.lwwww.top/images/20250218190426297.png"
+                        alt="image-20250218185207045"
+                 ></p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="http://images.lwwww.top/images/20250218190429273.png"
+                        alt="image-20250218185257646"
+                 ></p>
+<p>HOST就是你服务器的公网ip port都是自定义的不被占用就是，默认都是50050 password就是你命令里面设置那个</p>
+<p>以上属于是调试cs了，然后下面才是目的—生成木马</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="http://images.lwwww.top/images/20250218190439982.png"
+                        alt="image-20250218185511497"
+                 ></p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="http://images.lwwww.top/images/20250218190443691.png"
+                        alt="image-20250218185553846"
+                 ></p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="http://images.lwwww.top/images/20250218190449174.png"
+                        alt="image-20250218185827719"
+                 ></p>
+<p>然后有监听了就去生成exe</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="http://images.lwwww.top/images/20250218190501079.png"
+                        alt="image-20250218185948239"
+                 ></p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="http://images.lwwww.top/images/20250218190455140.png"
+                        alt="image-20250218190047341"
+                 ></p>
+<p>然后你就可以有一个小木马咯</p>
+<p>记得不要扔到微步或者别的云沙箱 赵师傅告诉我说如果扔进去了你的这个exe的服务器ip会被记住然后就很难过免杀了</p>
+<p>以后有空我再去研究一下如果过免杀哈哈</p>
 
                     
                 </div>
@@ -327,11 +421,11 @@
     <div class="copyright-info-content border-box">
         <div class="copyright-info-top border-box">
             <div class="copyright-post-title border-box text-ellipsis">
-                20250207
+                CS制作木马的简易小教程（纯娱乐不要拿来干坏事！）
             </div>
 
             <div class="copyright-post-link border-box text-ellipsis">
-                2025/02/07/20250207/
+                2025/02/18/CS制作木马的简易小教程（纯娱乐不要拿来干坏事！）/
             </div>
         </div>
 
@@ -347,7 +441,7 @@
                 <div class="type">
                     Published
                 </div>
-                <div class="content">2025-02-07 12:34</div>
+                <div class="content">2025-02-18 18:00</div>
             </div>
 
 
@@ -383,7 +477,7 @@
                             <ul class="post-tags-box border-box">
                                 
                                     <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E9%9A%8F%E7%AC%94/">-随笔</a>
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/WEB-%E6%B8%97%E9%80%8F-%E6%9C%A8%E9%A9%AC/">-WEB -渗透 -木马</a>
                                     </li>
                                 
                             </ul>
@@ -435,31 +529,15 @@
                 
                     <div class="post-nav border-box">
                         
-                            <div class="prev-post">
-                                <a class="prev"
-                                   rel="prev"
-                                   href="/2025/02/15/Yakit%E5%AD%A6%E4%B9%A0/"
-                                   title="Yakit学习"
-                                >
-                                    <span class="left arrow-icon flex-center">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                    <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">Yakit学习</span>
-                                        <span class="post-nav-item">Prev posts</span>
-                                    </span>
-                                </a>
-                            </div>
-                        
                         
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/2025/01/31/%E6%B5%85%E5%AD%A6PHP%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/"
-                                   title="浅学PHP反序列化"
+                                   href="/2025/02/15/Yakit%E5%AD%A6%E4%B9%A0/"
+                                   title="Yakit学习"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">浅学PHP反序列化</span>
+                                        <span class="post-nav-title-item text-ellipsis">Yakit学习</span>
                                         <span class="post-nav-item">Next posts</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
