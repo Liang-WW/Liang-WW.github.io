@@ -9,7 +9,7 @@
     
     <title>
         
-            Archive: 2025/2 |
+            Tag: -web -w |
         
         Lwwww&#39;s Blog
     </title>
@@ -87,7 +87,7 @@
                         </li>
                     
                         
-                        <li class="menu-item flex-start border-box active">
+                        <li class="menu-item flex-start border-box">
                             <a class="menu-text-color border-box" href="/archives">
                                 
                                 ARCHIVES
@@ -160,7 +160,7 @@
                 </li>
             
                 
-                <li class="drawer-menu-item border-box not-sub-menu active">
+                <li class="drawer-menu-item border-box not-sub-menu">
                     <label class="drawer-menu-label border-box">
                         <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
                             
@@ -222,11 +222,31 @@
             <div class="main-content border-box">
                 
 
-                    .archives-container {
+                    $tag-name-font-size = 1.5rem
+
+.tag-archive-container {
+
   keep-container(1, 2rem, 2rem)
+
+  .tag-name {
+    margin-bottom var(--component-gap)
+    color var(--text-color-2)
+    font-weight 600
+    font-size $tag-name-font-size
+
+    i {
+      color var(--text-color-2)
+    }
+
+    +keep-tablet() {
+      font-size $tag-name-font-size * 0.9
+    }
+
+    +keep-mobile() {
+      font-size $tag-name-font-size * 0.8
+    }
+  }
 }
-
-
 
 
                 
