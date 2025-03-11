@@ -9,7 +9,7 @@
     
     <title>
         
-            学号rule |
+            初识内存马 |
         
         Lwwww&#39;s Blog
     </title>
@@ -231,7 +231,7 @@
             <div class="post-content-bottom border-box">
                 
                     <div class="post-title">
-                        学号rule
+                        初识内存马
                     </div>
                 
 
@@ -259,13 +259,13 @@
         
             <span class="meta-info-item post-create-date">
                 <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
-                <span class="datetime">2025-03-02 10:43:40</span>
+                <span class="datetime">2025-03-11 11:10:01</span>
             </span>
 
             
                 <span class="meta-info-item post-update-date">
                     <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                    <span class="datetime" data-updated="Sun Mar 02 2025 10:50:06 GMT+0800">2025-03-02 10:50:06</span>
+                    <span class="datetime" data-updated="Tue Mar 11 2025 18:11:30 GMT+0800">2025-03-11 18:11:30</span>
                 </span>
             
         
@@ -273,16 +273,25 @@
         
 
         
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/WEB-%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94-%E5%86%85%E5%AD%98%E9%A9%AC/">-WEB -应急响应 -内存马</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
 
         
         
             <span class="meta-info-item post-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>21 Words</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>2.2k Words</span>
             </span>
         
         
             <span class="meta-info-item post-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>1 Mins</span>
+                <i class="icon fas fa-clock"></i>&nbsp;<span>7 Mins</span>
             </span>
         
         
@@ -304,23 +313,65 @@
                     
 
                     
-                         <p>学号规则例子202302071119</p>
-<table>
-<thead>
-<tr>
-<th>入学年份</th>
-<th>学院</th>
-<th>专业</th>
-<th>编号</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>2023</td>
-<td>02</td>
-<td>07</td>
-<td>1119</td>
-</tr>
-</tbody></table>
+                         <p>最近备赛 天津的CISCN长城杯线下。疯狂刷玄机靶场的应急响应，但是做的很粗糙，基本上就是对着wp过一遍，很多东西来不及消化和吸收，但是也是对应急响应逐渐熟悉起来了，以前一直不太清楚应急响应是啥 之前还感觉跟取证是一块内容哈哈。</p>
+<p>玄机打完前七章了，也没抽空写wp，但是也不打算写了 <a class="link"   target="_blank" rel="noopener" href="https://peterpan.blog.csdn.net/?type=blog" >Peterpan.exe<i class="fas fa-external-link-alt"></i></a>师傅的wp我就是写质量也不如他写得好 所以干脆不写了 疯狂推荐Peterpan.exe的玄机wp虽然已经推荐过了。</p>
+<p>第八章涉及到java内存马 虽说是排查但是必然是要了解一下的 感觉是一块大内容所以打算专门抽空学习一下这个内容，感觉以后不可避免的绕不开。</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/AsrWA1I5OmtUhLzKbqboNA" >应急响应——全类型JAVA内存马排查<i class="fas fa-external-link-alt"></i></a></p>
+<p>言归正传：</p>
+<h3 id="内存马是啥"><a href="#内存马是啥" class="headerlink" title="内存马是啥"></a>内存马是啥</h3><p>内存马，也被称为无文件马，是无文件攻击的一种常用手段。内存马是无文件攻击的一种技术手段，那我们不得不先简单介绍一下无文件攻击。无文件攻击可以有效地躲避传统安全软件的检测，它们可以在系统的内存中远程加载执行、驻留在注册表中或滥用常用的白名单工具，例如PowerShell，Windows Management Instrumentation（WMI）和PsExec等。无文件攻击技术允许攻击者访问系统，从而启用后续的恶意活动。通过操纵漏洞利用程序、合法工具、宏和脚本，攻击者可以破坏系统、提升特权或在网络上横向传播恶意代码。而且，无文件威胁在执行后不会留下任何痕迹，这使其难以被检测和清除。</p>
+<p>Webshell内存马，是在内存中写入恶意后门和木马并执行，达到远程控制Web服务器的一类内存马，其瞄准了企业的对外窗口：网站、应用。但传统的Webshell都是基于文件类型的，黑客可以利用上传工具或网站漏洞植入木马，区别在于Webshell内存马是无文件马，<strong>利用中间件的进程</strong>执行某些恶意代码，<strong>不会有文件落地</strong>，给检测带来巨大难度。而内存攻击者正是利用软件安全漏洞，构造恶意输入导致软件在处理输入数据时出现非预期错误，将输入数据写入内存中的某些特定敏感位置，从而劫持软件控制流、执行流，转而执行外部输入的指令代码，造成目标系统被获取远程控制，让内存马的攻击得以实现。</p>
+<p><em>webshell的变迁过程大致如下所述：</em></p>
+<p><em>web服务器管理页面——&gt; 大马——&gt;小马拉大马——&gt;一句话木马——&gt;加密一句话木马——&gt;加密内存马</em></p>
+<p><em><img  
+                       lazyload
+                       alt="image"
+                       data-src="http://images.lwwww.top/images/20250311114443497.jpeg"
+                        alt="37fe30ea3e8f28b06cac4bd346ae325d"
+                 ></em></p>
+<blockquote>
+<p>[!TIP]</p>
+<h3 id="背景知识"><a href="#背景知识" class="headerlink" title="背景知识"></a>背景知识</h3></blockquote>
+<p>javaweb的三大件：<strong>Servlet</strong> <strong>Filter</strong>  <strong>Listener</strong></p>
+<h5 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a><strong>Servlet</strong></h5><p>Servlet 是运行在 Web 服务器或应用服务器上的程序，它是作为来自 HTTP 客户端的请求和 HTTP 服务器上的数据库或应用程序之间的中间层。它负责处理用户的请求，并根据请求生成相应的返回信息提供给用户。</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="http://images.lwwww.top/images/20250311115445521.png"
+                        alt="9f891bf272d9fdef8c830085fa4844ba"
+                 ></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">请求的处理过程：</span><br><span class="line"></span><br><span class="line">客户端发起一个http请求，比如get类型。</span><br><span class="line"></span><br><span class="line">Servlet容器接收到请求，根据请求信息，封装成HttpServletRequest和HttpServletResponse对象。</span><br><span class="line"></span><br><span class="line">Servlet容器调用HttpServlet的init()方法，init方法只在第一次请求的时候被调用。</span><br><span class="line"></span><br><span class="line">Servlet容器调用service()方法。</span><br><span class="line"></span><br><span class="line">service()方法根据请求类型，这里是get类型，分别调用doGet或者doPost方法，这里调用doGet方法。</span><br><span class="line"></span><br><span class="line">doXXX方法中是我们自己写的业务逻辑。</span><br><span class="line"></span><br><span class="line">业务逻辑处理完成之后，返回给Servlet容器，然后容器将结果返回给客户端。</span><br><span class="line"></span><br><span class="line">容器关闭时候，会调用destory方法</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h6 id="Servlet和JSP的关系？"><a href="#Servlet和JSP的关系？" class="headerlink" title="Servlet和JSP的关系？"></a><strong>Servlet和JSP的关系？</strong></h6><p>JSP（全称Java Server Pages）<br> JSP经过转换编译以后还是会变成Servlet，支持前<br> 端语法。<br> View：JSP，负责内容显示<br> Controller：Servlet，负责处理请求</p>
+<h6 id="Servlet和Tomcat的关系"><a href="#Servlet和Tomcat的关系" class="headerlink" title="Servlet和Tomcat的关系"></a>Servlet和Tomcat的关系</h6><pre><code>Tomcat里面有Servlet容器（引擎）
+Tomcat可以提供HTTP访问
+Tomcat可以把HTTP请求转换为HttpServletRequest对象，并调用doGet/doPost，并且把HttpServletResponse转换为HTTP响应内容
+</code></pre>
+<h5 id="Filter"><a href="#Filter" class="headerlink" title="Filter"></a><strong>Filter</strong></h5><p>filter也称之为过滤器，是对Servlet技术的一个强补充，其主要功能是在HttpServletRequest到达 Servlet 之前，拦截客户的HttpServletRequest ，根据需要检查HttpServletRequest，也可以修改HttpServletRequest 头和数据；在HttpServletResponse到达客户端之前，拦截HttpServletResponse ，根据需要检查HttpServletResponse，也可以修改HttpServletResponse头和数据。</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="http://images.lwwww.top/images/20250311115828111.png"
+                        alt="976bebf2851b55517a6e19baa2168c17"
+                 ></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">过程：</span><br><span class="line">1、Filter 程序是一个实现了特殊接口的 Java 类，与 Servlet 类似，也是由 Servlet 容器进行调用和执行的。 </span><br><span class="line"></span><br><span class="line"> 2、当在 web.xml 注册了一个 Filter 来对某个 Servlet 程序进行拦截处理时，它可以决定是否将请求继续传递给 Servlet 程序，以及对请求和响应消息是否进行修改。 </span><br><span class="line"></span><br><span class="line"> 3、当 Servlet 容器开始调用某个 Servlet 程序时，如果发现已经注册了一个 Filter 程序来对该 Servlet 进行拦截，那么容器不再直接调用 Servlet 的 service 方法，而是调用 Filter 的 doFilter 方法，再由 doFilter 方法决定是否去激活 service 方法。 </span><br><span class="line"></span><br><span class="line"> 4、但在 Filter.doFilter 方法中不能直接调用 Servlet 的 service 方法，而是调用 FilterChain.doFilter 方法来激活目标 Servlet 的 service 方法，FilterChain 对象时通过 Filter.doFilter 方法的参数传递进来的。 </span><br><span class="line"></span><br><span class="line"> 5、只要在 Filter.doFilter 方法中调用 FilterChain.doFilter 方法的语句前后增加某些程序代码，这样就可以在 Servlet 进行响应前后实现某些特殊功能。 </span><br><span class="line"></span><br><span class="line"> 6、如果在 Filter.doFilter 方法中没有调用 FilterChain.doFilter 方法，则目标 Servlet 的 service 方法不会被执行，这样通过 Filter 就可以阻止某些非法的访问请求。 </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h5 id="Listener"><a href="#Listener" class="headerlink" title="Listener"></a>Listener</h5><p>JavaWeb开发中的监听器（Listener）就是Application、Session和Request三大对象创建、销毁或者往其中添加、修改、删除属性时自动执行代码的功能组件。</p>
+<p>ServletContextListener：对Servlet上下文的创建和销毁进行监听；<br>ServletContextAttributeListener：监听Servlet上下文属性的添加、删除和替换；</p>
+<p>HttpSessionListener：对Session的创建和销毁进行监听。Session的销毁有两种情况，一个中Session超时，还有一种是通过调用Session对象的invalidate()方法使session失效。</p>
+<p>HttpSessionAttributeListener：对Session对象中属性的添加、删除和替换进行监听；</p>
+<p>ServletRequestListener：对请求对象的初始化和销毁进行监听；<br>ServletRequestAttributeListener：对请求对象属性的添加、删除和替换进行监听。</p>
+<p>用途</p>
+<p>可以使用监听器监听客户端的请求、服务端的操作等。通过监听器，可以自动出发一些动作，比如监听在线的用户数量，统计网站访问量、网站访问监控等。</p>
+<h5 id="内存马应用理解"><a href="#内存马应用理解" class="headerlink" title="内存马应用理解"></a>内存马应用理解</h5><p>想要接管web应用的处理逻辑，其实就是两种方法，一种是直接篡改他，一种是顺着他利用其自己的一些特性去接管他；就是如下两种方法：</p>
+<ul>
+<li><p>研究如何去修改jvm里面的web应用一些处理逻辑类的实现，从而实现修改web应用的处理逻辑；</p>
+</li>
+<li><p>顺着web应用来，利用web应用自身的可拓展性，比如其一些服务组件可以动态的增添的特性来实现接管web应用对请求的处理逻辑；</p>
+</li>
+</ul>
+<p>同时这里我们也可以看出第一种方法的处理范围一定程度上肯定是比第二种大的，但是这里并不是包含关系，一个是对类的实现篡改，一个是添加；</p>
+<p>首先我们要了解排查的原理，对于这类的内存马，是通过添加一些组件实现的，每种组件都有一个父类，我们可以遍历jvm里面的所有类，找到继承了上面三种公共父类的类或者是实现的公共接口，又或者是找到这些类的其他公共特征，然后输出类名及路径开展排查，一般来说比较简单粗暴的排查方法可以借助内存马的性质来做，即观察本地是否存在相关类文件落地，没有就是重点怀疑对象；</p>
+<p>（学不明白 java底子不好 不太能理解 我觉得先当脚本小子去，也是应了题目了 初时java内存马哈哈）</p>
 
                     
                 </div>
@@ -331,11 +382,11 @@
     <div class="copyright-info-content border-box">
         <div class="copyright-info-top border-box">
             <div class="copyright-post-title border-box text-ellipsis">
-                学号rule
+                初识内存马
             </div>
 
             <div class="copyright-post-link border-box text-ellipsis">
-                2025/03/02/学号rule/
+                2025/03/11/初识内存马/
             </div>
         </div>
 
@@ -351,7 +402,7 @@
                 <div class="type">
                     Published
                 </div>
-                <div class="content">2025-03-02 10:43</div>
+                <div class="content">2025-03-11 11:10</div>
             </div>
 
 
@@ -383,6 +434,14 @@
 
                 <div class="post-bottom-tags-and-share border-box">
                     <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/WEB-%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94-%E5%86%85%E5%AD%98%E9%A9%AC/">-WEB -应急响应 -内存马</a>
+                                    </li>
+                                
+                            </ul>
                         
                     </div>
                     <div>
@@ -431,31 +490,15 @@
                 
                     <div class="post-nav border-box">
                         
-                            <div class="prev-post">
-                                <a class="prev"
-                                   rel="prev"
-                                   href="/2025/03/02/3%E6%9C%883-3%E6%9C%888%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1/"
-                                   title="3月3--3月8计划任务"
-                                >
-                                    <span class="left arrow-icon flex-center">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                    <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">3月3--3月8计划任务</span>
-                                        <span class="post-nav-item">Prev posts</span>
-                                    </span>
-                                </a>
-                            </div>
-                        
                         
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/2025/02/22/%E7%8D%AC%E8%B1%B8%E6%9D%AF%E5%8F%96%E8%AF%81%E5%A4%8D%E7%8E%B0/"
-                                   title="獬豸杯取证再也不复现"
+                                   href="/2025/03/04/%E7%8E%84%E6%9C%BA%E9%9D%B6%E5%9C%BA/"
+                                   title="玄机靶场"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">獬豸杯取证再也不复现</span>
+                                        <span class="post-nav-title-item text-ellipsis">玄机靶场</span>
                                         <span class="post-nav-item">Next posts</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
@@ -483,7 +526,7 @@
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E9%A9%AC%E6%98%AF%E5%95%A5"><span class="nav-text">内存马是啥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E7%9F%A5%E8%AF%86"><span class="nav-text">背景知识</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Servlet"><span class="nav-text">Servlet</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Servlet%E5%92%8CJSP%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%9F"><span class="nav-text">Servlet和JSP的关系？</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Servlet%E5%92%8CTomcat%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-text">Servlet和Tomcat的关系</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Filter"><span class="nav-text">Filter</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Listener"><span class="nav-text">Listener</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E9%A9%AC%E5%BA%94%E7%94%A8%E7%90%86%E8%A7%A3"><span class="nav-text">内存马应用理解</span></a></li></ol></li></ol></li></ol>
     </div>
 </div>
 
@@ -518,7 +561,7 @@
             
                 <span class="count-item border-box word">
                     <span class="item-type border-box">Total words</span>
-                    <span class="item-value border-box word">17.2k</span>
+                    <span class="item-value border-box word">19.5k</span>
                 </span>
             
 
@@ -666,7 +709,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E9%A9%AC%E6%98%AF%E5%95%A5"><span class="nav-text">内存马是啥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E7%9F%A5%E8%AF%86"><span class="nav-text">背景知识</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Servlet"><span class="nav-text">Servlet</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Servlet%E5%92%8CJSP%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%9F"><span class="nav-text">Servlet和JSP的关系？</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Servlet%E5%92%8CTomcat%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-text">Servlet和Tomcat的关系</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Filter"><span class="nav-text">Filter</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Listener"><span class="nav-text">Listener</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E9%A9%AC%E5%BA%94%E7%94%A8%E7%90%86%E8%A7%A3"><span class="nav-text">内存马应用理解</span></a></li></ol></li></ol></li></ol>
     </div>
 </div>
 
