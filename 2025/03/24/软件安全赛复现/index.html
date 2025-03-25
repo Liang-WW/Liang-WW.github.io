@@ -9,7 +9,7 @@
     
     <title>
         
-            3月3--3月8计划任务 |
+            软件安全赛复现 |
         
         Lwwww&#39;s Blog
     </title>
@@ -231,7 +231,7 @@
             <div class="post-content-bottom border-box">
                 
                     <div class="post-title">
-                        3月3--3月8计划任务
+                        软件安全赛复现
                     </div>
                 
 
@@ -259,13 +259,13 @@
         
             <span class="meta-info-item post-create-date">
                 <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
-                <span class="datetime">2025-03-02 22:58:20</span>
+                <span class="datetime">2025-03-24 19:14:43</span>
             </span>
 
             
                 <span class="meta-info-item post-update-date">
                     <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                    <span class="datetime" data-updated="Sun Mar 23 2025 12:08:07 GMT+0800">2025-03-23 12:08:07</span>
+                    <span class="datetime" data-updated="Tue Mar 25 2025 13:22:30 GMT+0800">2025-03-25 13:22:30</span>
                 </span>
             
         
@@ -276,7 +276,7 @@
             <span class="post-tag meta-info-item border-box">
                 <ul class="post-tag-ul">
                     
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E6%97%A5%E5%B8%B8-%E8%AE%A1%E5%88%92/">-日常 -计划</a></li>
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/WP-MISC-CTF/">-WP -MISC -CTF</a></li>
                         
                     
                 </ul>
@@ -286,7 +286,7 @@
         
         
             <span class="meta-info-item post-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>199 Words</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>453 Words</span>
             </span>
         
         
@@ -313,44 +313,123 @@
                     
 
                     
-                         <p>Demon说要监督我</p>
-<ul>
-<li><p><input disabled="" type="checkbox"> 
-每天坚持背单词35+然后复习单词50+，尽量纸质电子同步积累，英语课也要充分利用起来</p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-一周坚持运动5天，不能比上周胖</p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-根据Demon的任务完成四级题目</p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-完成玄机靶场第一章，并且写blog记录玄机的wp</p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-给学弟们申请晚自习假条</p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-给华子姐起步取证和应急响应</p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-每天坚持七点起床然后睡觉最晚不超过12点半</p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-有概率论和数据库课的当天要及时复习掌握，然后看视频或者做题消化吸收，保证自己的进度在老师前面并且完成每天的作业</p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-每天抖音限时1h</p>
-</li>
-<li><p><input disabled="" type="checkbox"> 
-burpsuite靶场这个月全部打<img  
+                         <p>坐牢没解出</p>
+<p>但是赛后看wp思路几乎一致 只差一个5G的小知识点</p>
+<p><img  
                        lazyload
                        alt="image"
-                       data-src="http://images.lwwww.top/images/20250302231035103.jpg"
-                        alt="96e121fd4d70503140822347948880a"
+                       data-src="http://images.lwwww.top/images/20250324191952203.png"
+                        alt="image-20250324191942717"
                  ></p>
-</li>
-</ul>
+<p>​	wireshark打开文件</p>
+<p>从头开始捋的话</p>
+<p>我的思路是</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">先看到协议 一眼望去都是tcp然后还有一个点是目的ip和源ip都是127.0.0.1----所以默认没用了 然后就看到ICMPv6有TLSv1.2</span><br></pre></td></tr></table></figure>
+
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="http://images.lwwww.top/images/20250324193309693.png"
+                        alt="image-20250324193307365"
+                 ></p>
+<p>这个时候结合题目5G主题猜也知道关键点就是这个TLS的消息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">TLS流量是指通过TLS协议加密的数据传输，它在客户端和服务器之间建立一个加密的通道，确保数据在传输过程中不被窃听、篡改或伪造。</span><br><span class="line"></span><br><span class="line">一般的TLS流量就是找到key，导入key，在导入key之后就会多出几个流量包（即加密流量包），在里边会有想要的答案。</span><br></pre></td></tr></table></figure>
+
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="http://images.lwwww.top/images/20250324201839705.png"
+                        alt="image-20250324201837766"
+                 ></p>
+<p>misc手的通病 就是工具梭哈试试 所以启动NetA</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="http://images.lwwww.top/images/20250324201949767.png"
+                        alt="image-20250324201947704"
+                 ></p>
+<p>在这里也是 找到了关键点 也就这个TLS.keylog</p>
+<p>但是当时在现场没有这个知识点 </p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="http://images.lwwww.top/images/20250324202850629.png"
+                        alt="image-20250324202847018"
+                 ></p>
+<p>在NetA和wireshark里面都可以找到有这个TLS.keylog的文件的地方</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="http://images.lwwww.top/images/20250324203917826.png"
+                        alt="image-20250324203915616"
+                 ></p>
+<p>并且还能找到这个信息 Bob的一句话</p>
+<p>在追踪流SIP流能找到出处</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="http://images.lwwww.top/images/20250324210006134.png"
+                        alt="image-20250324210003039"
+                 ></p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="http://images.lwwww.top/images/20250324210042399.png"
+                        alt="image-20250324210040122"
+                 ></p>
+<p>追踪完SIP流再看TCP流</p>
+<p>往下翻找<img  
+                       lazyload
+                       alt="image"
+                       data-src="http://images.lwwww.top/images/20250324211040128.png"
+                        alt="image-20250324211019039"
+                 ></p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="http://images.lwwww.top/images/20250324211049316.png"
+                       
+                 ></p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="http://images.lwwww.top/images/20250324211111045.png"
+                        alt="image-20250324211108854"
+                 ></p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="http://images.lwwww.top/images/20250324211125199.png"
+                        alt="image-20250324211123567"
+                 ></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SERVER HANDSHAKE TRAFFIC SECRET</span><br><span class="line">9745a631db0b9b715f18a55220e17c88fdf3389c0ee899cfcc45faa8696462c1994da7436ac3193aff9c2ebaa3c072ea2c5b704683928e9f6e24d183e7e530386c1dcd186b9286f98249b4dc90d8b795EXPORTER SECRET</span><br><span class="line">9745a631db0b9b715f18a55220e17c88fdf3389c0ee899cfcc45faa8696462c131882156a3212a425590ce171cb78068ee63e7358b587fed472d45d67ea567d98a079c84867a18665732cfobfe18f0b0</span><br><span class="line">SERVER_TRAFFIC_SECRET_0</span><br><span class="line">9745a631db0b9b715f18a55220e17c88fdf3389c0ee899cfcc45faa8696462c11fbf7c07ca88c7c91be9cce4c9051f2f4bd7fb9714920661d026119ebab458db8637089348dd5a92d</span><br><span class="line">c75633bdcf43630</span><br><span class="line">CLIENT_HANDSHAKE TRAFFIC SECRET9745a631db0b9b715f18a55220e17c88fdf3389c0ee899cfcc45faa8696462c1a98fab3039737579a50e2b3d0bbaba7c9fcf6881d26ccf15890b06d723ba605f096dbe448cd9dcc6cf4ef5c82d187bd0</span><br><span class="line">CLIENT_TRAFFIC SECRET O9745a631db0b9b715f18a55220e17c88fdf3389c0ee899cfcc45faa8696462c1646306cb35d94f23e125225dc3d3c727df65b6fcec4c6cd77b6f8e2ff36d48e2b7e92e8f9188597c961866b3b667f405</span><br></pre></td></tr></table></figure>
+
+<p>把散落的组成并保存成ssl.log</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="http://images.lwwww.top/images/20250324212400851.png"
+                        alt="image-20250324212358786"
+                 ></p>
+<p>导入：编辑–&gt;首选项–&gt;Protocols–&gt;TLS</p>
+<p>但是遇到了一个问题就是keylog的格式其实有要求的 我自己调试了很多次然后问了C3师傅才成功导入进去正确的格式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SERVER_HANDSHAKE_TRAFFIC_SECRET 9745a631db0b9b715f18a55220e17c88fdf3389c0ee899cfcc45faa8696462c1 994da7436ac3193aff9c2ebaa3c072ea2c5b704683928e9f6e24d183e7e530386c1dcd186b9286f98249b4dc90d8b795</span><br><span class="line">EXPORTER_SECRET 9745a631db0b9b715f18a55220e17c88fdf3389c0ee899cfcc45faa8696462c1 31882156a3212a425590ce171cb78068ee63e7358b587fed472d45d67ea567d98a079c84867a18665732cf0bfe18f0b0</span><br><span class="line">SERVER_TRAFFIC_SECRET_0 9745a631db0b9b715f18a55220e17c88fdf3389c0ee899cfcc45faa8696462c1 1fbf7c07ca88c7c91be9cce4c9051f2f4bd7fb9714920661d026119ebab458db8637089348dd5a92dc75633bdcf43630</span><br><span class="line">CLIENT_HANDSHAKE_TRAFFIC_SECRET 9745a631db0b9b715f18a55220e17c88fdf3389c0ee899cfcc45faa8696462c1 a98fab3039737579a50e2b3d0bbaba7c9fcf6881d26ccf15890b06d723ba605f096dbe448cd9dcc6cf4ef5c82d187bd0</span><br><span class="line">CLIENT_TRAFFIC_SECRET_0 9745a631db0b9b715f18a55220e17c88fdf3389c0ee899cfcc45faa8696462c1 646306cb35d94f23e125225dc3d3c727df65b6fcec4c6cd77b6f8e2ff36d48e2b7e92e8f9188597c961866b3b667f405</span><br></pre></td></tr></table></figure>
+
+<p><del>把这个保存为后缀为log的文件就可以 这个格式正确</del></p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="http://images.lwwww.top/images/20250325130509681.png"
+                        alt="1742879091881"
+                 ></p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="http://images.lwwww.top/images/20250325132157678.png"
+                        alt="image-20250325132155186"
+                 ></p>
+<p>最后的步骤就很简单了 </p>
+<p>图片出来就是flag了</p>
 
                     
                 </div>
@@ -361,11 +440,11 @@ burpsuite靶场这个月全部打<img
     <div class="copyright-info-content border-box">
         <div class="copyright-info-top border-box">
             <div class="copyright-post-title border-box text-ellipsis">
-                3月3--3月8计划任务
+                软件安全赛复现
             </div>
 
             <div class="copyright-post-link border-box text-ellipsis">
-                2025/03/02/3月3-3月8计划任务/
+                2025/03/24/软件安全赛复现/
             </div>
         </div>
 
@@ -381,7 +460,7 @@ burpsuite靶场这个月全部打<img
                 <div class="type">
                     Published
                 </div>
-                <div class="content">2025-03-02 22:58</div>
+                <div class="content">2025-03-24 19:14</div>
             </div>
 
 
@@ -417,7 +496,7 @@ burpsuite靶场这个月全部打<img
                             <ul class="post-tags-box border-box">
                                 
                                     <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E6%97%A5%E5%B8%B8-%E8%AE%A1%E5%88%92/">-日常 -计划</a>
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/WP-MISC-CTF/">-WP -MISC -CTF</a>
                                     </li>
                                 
                             </ul>
@@ -469,31 +548,15 @@ burpsuite靶场这个月全部打<img
                 
                     <div class="post-nav border-box">
                         
-                            <div class="prev-post">
-                                <a class="prev"
-                                   rel="prev"
-                                   href="/2025/03/04/%E7%8E%84%E6%9C%BA%E9%9D%B6%E5%9C%BA/"
-                                   title="玄机靶场"
-                                >
-                                    <span class="left arrow-icon flex-center">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                    <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">玄机靶场</span>
-                                        <span class="post-nav-item">Prev posts</span>
-                                    </span>
-                                </a>
-                            </div>
-                        
                         
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/2025/02/22/%E7%8D%AC%E8%B1%B8%E6%9D%AF%E5%8F%96%E8%AF%81%E5%A4%8D%E7%8E%B0/"
-                                   title="獬豸杯取证再也不复现"
+                                   href="/2025/03/18/FIC%E5%8F%96%E8%AF%81%E5%88%9D%E8%B5%9B%E5%A4%8D%E7%8E%B0/"
+                                   title="FIC取证初赛复现"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">獬豸杯取证再也不复现</span>
+                                        <span class="post-nav-title-item text-ellipsis">FIC取证初赛复现</span>
                                         <span class="post-nav-item">Next posts</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
