@@ -9,7 +9,7 @@
     
     <title>
         
-            CS制作木马的简易小教程（纯娱乐不要拿来干坏事！） |
+            Dectf MISC出题思路 |
         
         Lwwww&#39;s Blog
     </title>
@@ -231,7 +231,7 @@
             <div class="post-content-bottom border-box">
                 
                     <div class="post-title">
-                        CS制作木马的简易小教程（纯娱乐不要拿来干坏事！）
+                        Dectf MISC出题思路
                     </div>
                 
 
@@ -259,13 +259,13 @@
         
             <span class="meta-info-item post-create-date">
                 <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
-                <span class="datetime">2025-02-18 18:00:57</span>
+                <span class="datetime">2025-03-11 18:13:12</span>
             </span>
 
             
                 <span class="meta-info-item post-update-date">
                     <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                    <span class="datetime" data-updated="Tue Feb 18 2025 19:05:37 GMT+0800">2025-02-18 19:05:37</span>
+                    <span class="datetime" data-updated="Fri May 09 2025 17:37:23 GMT+0800">2025-05-09 17:37:23</span>
                 </span>
             
         
@@ -276,7 +276,7 @@
             <span class="post-tag meta-info-item border-box">
                 <ul class="post-tag-ul">
                     
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/WEB-%E6%B8%97%E9%80%8F-%E6%9C%A8%E9%A9%AC/">-WEB -渗透 -木马</a></li>
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/CTF-WP-MISC/">-CTF -WP -MISC</a></li>
                         
                     
                 </ul>
@@ -286,12 +286,12 @@
         
         
             <span class="meta-info-item post-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>904 Words</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>569 Words</span>
             </span>
         
         
             <span class="meta-info-item post-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>3 Mins</span>
+                <i class="icon fas fa-clock"></i>&nbsp;<span>2 Mins</span>
             </span>
         
         
@@ -313,104 +313,40 @@
                     
 
                     
-                         <p>想要制作小木马控制一下你的亲朋好友或者窥探一下女神的隐私吗</p>
-<p>那就让我来教教你</p>
-<p>首先就是得有个VPS云服务器，我就只学了cs制作exe文件的木马还有一种shellcode我还没研究所以就以window下的exe当例子咯</p>
-<p>先去极核那边把这个cs下上<a class="link"   target="_blank" rel="noopener" href="https://get-shell.com/1554.html" >https://get-shell.com/1554.html<i class="fas fa-external-link-alt"></i></a></p>
-<p>强烈推荐极核网站真的很好🤩</p>
-<p>然后先说一下这个的原理，我找到的几个教程全是步骤没有原理导致我笨笨的在kali里面捯饬</p>
-<p>cs的使用是分为客户端和服务端的，服务端必须是linux环境，然后按照公网的来的话，就是需要你在Linux环境下开启server的服务，让cs客户端能够和服务端连接上去，只有这样cs才能启动，</p>
-<p>然后放几个我看的教程链接	<a class="link"   target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/5uZiJECpPw8pfLc0JstZ0g" >工具分享 | CobaltStrike安装与简单使用<i class="fas fa-external-link-alt"></i></a>          </p>
-<p>我的服务器的环境是centos 这个是<a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/Xx47585874/article/details/124849471?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522e28769ae6fb6d0ed23b60bd85ff4db25%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=e28769ae6fb6d0ed23b60bd85ff4db25&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-124849471-null-null.142%5Ev101%5Epc_search_result_base3&utm_term=centos%E5%AE%89%E8%A3%85java&spm=1018.2226.3001.4187" >centos的java环境配置<i class="fas fa-external-link-alt"></i></a></p>
-<p>首先就是服务端需要Java环境,具体的其他操作可以去网上查，我只说我用的最方便无脑的方法</p>
-<p>利用<a class="link"   target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=yum&spm=1001.2101.3001.7020" >yum<i class="fas fa-external-link-alt"></i></a>源来安装jdk（此方法不需要配置环境变量）<br> 查看yum库中的java安装包 ：<code>yum -y list java*</code><br> 安装需要的jdk版本的所有java程序：yum -y install java-1.8.0-openjdk* (安装完之后，默认的安装目录是在: &#x2F;usr&#x2F;lib&#x2F;<a class="link"   target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=jvm&spm=1001.2101.3001.7020" >jvm<i class="fas fa-external-link-alt"></i></a>&#x2F;java-1.8.0-openjdk-1.8.0.151-1.b12.el7_4.x86_64)</p>
-<p>然后输入java -version</p>
-<p><img  
+                         <p>MISC出题思路</p>
+<h3 id="100简单：Owidth"><a href="#100简单：Owidth" class="headerlink" title="100简单：Owidth"></a>100简单：<strong>Owidth</strong></h3><p><strong>兽语或者佛曰迷惑 实则零宽隐写</strong></p>
+<p>Dem0n说她好胖😭然后甩我个经典语录</p>
+<p>随波逐流语录‌‌‌‌‍‍﻿﻿：‌‌‌‌‌﻿‍‍‌‌‌‌‍‬‬‌‌‌‌‌‍‬‬‍‌‌‌‌‍‍﻿﻿‌‌‌‌‍‌‍‌‌‌‌‌‌﻿‌﻿‌‌‌‌‍‬﻿‍‌‌‌‌‌﻿‌‌‌‌‌‌‍‬﻿‬‌‌‌‌‍‍﻿﻿‌‌‌‌‍‬‌‬‌‌‌‌‍﻿‍‍流逐逐波随浪波随波随浪波逐波波浪波逐流波洪流随随浪波逐流逐洋逐随逐流流流波随洋波波逐波波流逐波洋逐随逐波逐随随波洋波波随波流随流流洋逐随随随逐逐波波‌‌‌‌‍‍</p>
+<p>flag{q1_5hi_D3m0n_bu_pwn}</p>
+<h3 id="100-OSINT"><a href="#100-OSINT" class="headerlink" title="100 OSINT"></a>100 <strong>OSINT</strong></h3><p><img  
                        lazyload
                        alt="image"
-                       data-src="http://images.lwwww.top/images/20250218190410161.png"
-                        alt="image-20250218183004910"
+                       data-src="D:/lwwblog/source/images/202502/20250302112722878.png"
+                        alt="聊天记录"
                  ></p>
-<p>这样就是正常了</p>
-<p>然后这个时候你的安装包应该是下好了解压之后是这样的</p>
-<p><img  
+<h3 id=""><a href="#" class="headerlink" title=""></a><strong><img  
                        lazyload
                        alt="image"
-                       data-src="http://images.lwwww.top/images/20250218190415756.png"
-                        alt="image-20250218183113424"
-                 ></p>
-<p>去把Server想办法放到服务端里面，用什么协议也好，传zip也行，我是直接finalshell拖进去的，完成后进入到Server的目录下对teamserver文件增加执行权限 	<code>chmod +x teamserver</code> 	然后就得把这个服务端的服务起来了</p>
-<p>在下一步之前你要知道如果你是买的云服务器的话，你必须要干的一件事就是去安全组里面把入规则改一下，运行all 对你设定的端口进行tcp连接，如果不太懂得话那就按照我这个样子改一下就欧克</p>
-<p><img  
-                       lazyload
-                       alt="image"
-                       data-src="http://images.lwwww.top/images/20250218190420845.png"
-                        alt="image-20250218184007106"
-                 ></p>
-<p>记得也要在Linux本机上面开放端口</p>
-<p>开放端口</p>
-<p><strong>firewall-cmd –zone&#x3D;public –add-port&#x3D;5672&#x2F;tcp –permanent</strong>  # 开放5672端口</p>
-<p><strong>firewall-cmd –zone&#x3D;public –remove-port&#x3D;5672&#x2F;tcp –permanent</strong> #关闭5672端口</p>
-<p><strong>firewall-cmd –reload</strong>  # 配置立即生效</p>
-<p>改成50050端口就行这是cs默认得，记得一定要进行配置立即生效的命令要不然要等很久</p>
-<p>1、启动服务端。</p>
-<p>.&#x2F;teamserver 127.0.0.1 passwd    		#127.0.0.1服务端真实IP（最好写公网ip） 后面密码随意。</p>
-<p><img  
-                       lazyload
-                       alt="image"
-                       data-src="http://images.lwwww.top/images/20250218190513450.png"
-                        alt="image-20250218183724547"
-                 ></p>
-<p>大概是这样，如果报错了记得问ai解决，应该是问题不大了</p>
-<p>然后就是去客户端把cs连上了</p>
-<p><img  
-                       lazyload
-                       alt="image"
-                       data-src="http://images.lwwww.top/images/20250218190426297.png"
-                        alt="image-20250218185207045"
-                 ></p>
-<p><img  
-                       lazyload
-                       alt="image"
-                       data-src="http://images.lwwww.top/images/20250218190429273.png"
-                        alt="image-20250218185257646"
-                 ></p>
-<p>HOST就是你服务器的公网ip port都是自定义的不被占用就是，默认都是50050 password就是你命令里面设置那个</p>
-<p>以上属于是调试cs了，然后下面才是目的—生成木马</p>
-<p><img  
-                       lazyload
-                       alt="image"
-                       data-src="http://images.lwwww.top/images/20250218190439982.png"
-                        alt="image-20250218185511497"
-                 ></p>
-<p><img  
-                       lazyload
-                       alt="image"
-                       data-src="http://images.lwwww.top/images/20250218190443691.png"
-                        alt="image-20250218185553846"
-                 ></p>
-<p><img  
-                       lazyload
-                       alt="image"
-                       data-src="http://images.lwwww.top/images/20250218190449174.png"
-                        alt="image-20250218185827719"
-                 ></p>
-<p>然后有监听了就去生成exe</p>
-<p><img  
-                       lazyload
-                       alt="image"
-                       data-src="http://images.lwwww.top/images/20250218190501079.png"
-                        alt="image-20250218185948239"
-                 ></p>
-<p><img  
-                       lazyload
-                       alt="image"
-                       data-src="http://images.lwwww.top/images/20250218190455140.png"
-                        alt="image-20250218190047341"
-                 ></p>
-<p>然后你就可以有一个小木马咯</p>
-<p>记得不要扔到微步或者别的云沙箱 赵师傅告诉我说如果扔进去了你的这个exe的服务器ip会被记住然后就很难过免杀了</p>
-<p>以后有空我再去研究一下如果过免杀哈哈</p>
+                       data-src="D:/lwwblog/source/images/202502/20250302112729668.jpg"
+                        alt="osint"
+                 ></strong></h3><p>flag{齐鲁驾校}</p>
+<h3 id="150开学了-记得mm不记得xh"><a href="#150开学了-记得mm不记得xh" class="headerlink" title="150开学了 记得mm不记得xh"></a>150<strong>开学了 记得mm不记得xh</strong></h3><p>Wea5e1开学要抢课迫在眉睫了，大学的第二个学期就只能眼睁睁得看着别人把好课抢走吗，他现在只记得密码不记得学号了，然后他问导员要学号，剑刃导员却给了一串这个 88bd91a429e2bf0d275e5005286d91a77ce1cefd 还剑剑得说反正你是打CTF的，你肯定随手就解了,但是剑就剑在这个哈希是 学号+2025 <del>(不是加法是位数)</del> 的值不是学号的哈希，于是Wea5e1求助帅气的学长大人Lww</p>
+<p>Lww告诉Wea5e1他的<a class="link"   target="_blank" rel="noopener" href="http://lwwww.top/" >blog<i class="fas fa-external-link-alt"></i></a>里面有学号的规律</p>
+<p>2024020611022025</p>
+<p>考点hash爆破 爆破学号给出学号的规则 学号的hash</p>
+<p>提示1：flag{学号}</p>
+<p>提示2：sha1</p>
+<p>flag{202402061102}</p>
+<h3 id="300中难：嘛嘛嘛-嘛嘛嘛-嘛嘛嘛"><a href="#300中难：嘛嘛嘛-嘛嘛嘛-嘛嘛嘛" class="headerlink" title="300中难：嘛嘛嘛 嘛嘛嘛 嘛嘛嘛"></a>300中难：<strong>嘛嘛嘛 嘛嘛嘛 嘛嘛嘛</strong></h3><p>音频类隐写图片  表面mp3 实际是wav文件 silenteye藏图片的十六进制表面png实际jpg</p>
+<p>​    图片盲水印给出提示 base   Z64码表改变并且 给出flag格式</p>
+<p>木马exe拿出来十六进制扔到TXT 找到回连的ip flag{hash(ip)}</p>
+<p>提示：安静点，用眼看</p>
+<h3 id="400困难：这里空空的"><a href="#400困难：这里空空的" class="headerlink" title="400困难：这里空空的"></a>400困难：<strong>这里空空的</strong></h3><p>正常Excel表是zip 下面藏一个flagzip  zip里面无名文件（windows无法执行空白文件） 文件里面是异或flag 异或值是1020</p>
+<p>flag.zip要用解压软件拿出来才行不能正常解压在压回去（知识点是压回去会导致文件结构发生变化不适配excel的文件结果xml文件发生变化） excel表一直正常 改变出题思路直接隐写excel 隐藏的sheet表里有异或提示</p>
+<p>W\SWJtW]␁^␟␁␄␝PUPEFYWE^M</p>
+<p>flag{Dem0n-15-beautiful}</p>
+<p>提示：zip里面的文件怎么没有名字？</p>
+<p>这样看起来也简单的</p>
 
                     
                 </div>
@@ -421,11 +357,11 @@
     <div class="copyright-info-content border-box">
         <div class="copyright-info-top border-box">
             <div class="copyright-post-title border-box text-ellipsis">
-                CS制作木马的简易小教程（纯娱乐不要拿来干坏事！）
+                Dectf MISC出题思路
             </div>
 
             <div class="copyright-post-link border-box text-ellipsis">
-                2025/02/18/CS制作木马的简易小教程（纯娱乐不要拿来干坏事！）/
+                2025/03/11/MISC出题思路/
             </div>
         </div>
 
@@ -441,7 +377,7 @@
                 <div class="type">
                     Published
                 </div>
-                <div class="content">2025-02-18 18:00</div>
+                <div class="content">2025-03-11 18:13</div>
             </div>
 
 
@@ -477,7 +413,7 @@
                             <ul class="post-tags-box border-box">
                                 
                                     <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/WEB-%E6%B8%97%E9%80%8F-%E6%9C%A8%E9%A9%AC/">-WEB -渗透 -木马</a>
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/CTF-WP-MISC/">-CTF -WP -MISC</a>
                                     </li>
                                 
                             </ul>
@@ -532,14 +468,14 @@
                             <div class="prev-post">
                                 <a class="prev"
                                    rel="prev"
-                                   href="/2025/02/22/%E7%8D%AC%E8%B1%B8%E6%9D%AF%E5%8F%96%E8%AF%81%E5%A4%8D%E7%8E%B0/"
-                                   title="獬豸杯取证再也不复现"
+                                   href="/2025/03/18/FIC%E5%8F%96%E8%AF%81%E5%88%9D%E8%B5%9B%E5%A4%8D%E7%8E%B0/"
+                                   title="FIC取证初赛复现"
                                 >
                                     <span class="left arrow-icon flex-center">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">獬豸杯取证再也不复现</span>
+                                        <span class="post-nav-title-item text-ellipsis">FIC取证初赛复现</span>
                                         <span class="post-nav-item">Prev posts</span>
                                     </span>
                                 </a>
@@ -549,11 +485,11 @@
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/2025/02/15/Yakit%E5%AD%A6%E4%B9%A0/"
-                                   title="Yakit学习"
+                                   href="/2025/03/11/%E5%88%9D%E8%AF%86%E5%86%85%E5%AD%98%E9%A9%AC/"
+                                   title="初识内存马"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">Yakit学习</span>
+                                        <span class="post-nav-title-item text-ellipsis">初识内存马</span>
                                         <span class="post-nav-item">Next posts</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
@@ -581,7 +517,7 @@
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#100%E7%AE%80%E5%8D%95%EF%BC%9AOwidth"><span class="nav-text">100简单：Owidth</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#100-OSINT"><span class="nav-text">100 OSINT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text"></span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#150%E5%BC%80%E5%AD%A6%E4%BA%86-%E8%AE%B0%E5%BE%97mm%E4%B8%8D%E8%AE%B0%E5%BE%97xh"><span class="nav-text">150开学了 记得mm不记得xh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#300%E4%B8%AD%E9%9A%BE%EF%BC%9A%E5%98%9B%E5%98%9B%E5%98%9B-%E5%98%9B%E5%98%9B%E5%98%9B-%E5%98%9B%E5%98%9B%E5%98%9B"><span class="nav-text">300中难：嘛嘛嘛 嘛嘛嘛 嘛嘛嘛</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#400%E5%9B%B0%E9%9A%BE%EF%BC%9A%E8%BF%99%E9%87%8C%E7%A9%BA%E7%A9%BA%E7%9A%84"><span class="nav-text">400困难：这里空空的</span></a></li></ol>
     </div>
 </div>
 
@@ -764,7 +700,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#100%E7%AE%80%E5%8D%95%EF%BC%9AOwidth"><span class="nav-text">100简单：Owidth</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#100-OSINT"><span class="nav-text">100 OSINT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text"></span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#150%E5%BC%80%E5%AD%A6%E4%BA%86-%E8%AE%B0%E5%BE%97mm%E4%B8%8D%E8%AE%B0%E5%BE%97xh"><span class="nav-text">150开学了 记得mm不记得xh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#300%E4%B8%AD%E9%9A%BE%EF%BC%9A%E5%98%9B%E5%98%9B%E5%98%9B-%E5%98%9B%E5%98%9B%E5%98%9B-%E5%98%9B%E5%98%9B%E5%98%9B"><span class="nav-text">300中难：嘛嘛嘛 嘛嘛嘛 嘛嘛嘛</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#400%E5%9B%B0%E9%9A%BE%EF%BC%9A%E8%BF%99%E9%87%8C%E7%A9%BA%E7%A9%BA%E7%9A%84"><span class="nav-text">400困难：这里空空的</span></a></li></ol>
     </div>
 </div>
 
