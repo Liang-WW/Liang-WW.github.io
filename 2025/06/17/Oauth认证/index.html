@@ -265,7 +265,7 @@
             
                 <span class="meta-info-item post-update-date">
                     <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                    <span class="datetime" data-updated="Thu Jun 19 2025 14:08:46 GMT+0800">2025-06-19 14:08:46</span>
+                    <span class="datetime" data-updated="Tue Jun 24 2025 14:30:32 GMT+0800">2025-06-24 14:30:32</span>
                 </span>
             
         
@@ -286,12 +286,12 @@
         
         
             <span class="meta-info-item post-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>3.8k Words</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>4.2k Words</span>
             </span>
         
         
             <span class="meta-info-item post-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>14 Mins</span>
+                <i class="icon fas fa-clock"></i>&nbsp;<span>15 Mins</span>
             </span>
         
         
@@ -471,6 +471,46 @@
                        data-src="http://images.lwwww.top/images/20250619110425261.png"
                         alt="284b219931d0254f822b2d139a13898"
                  ></p>
+<h3 id="BP靶场打一下——隐式"><a href="#BP靶场打一下——隐式" class="headerlink" title="BP靶场打一下——隐式"></a>BP靶场打一下——隐式</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://portswigger.net/web-security/oauth/lab-oauth-authentication-bypass-via-oauth-implicit-flow</span><br></pre></td></tr></table></figure>
+
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="http://images.lwwww.top/images/20250624103932086.png"
+                        alt="image-20250624103923012"
+                 ></p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="http://images.lwwww.top/images/20250624104009581.png"
+                        alt="image-20250624104007440"
+                 ></p>
+<p>这个地方一开始没理解好 想着怎么一登录就变成了Oauth啊 后来过来两天才反应过来这直接就是一个Oauth的接口也就是直接就是微信登录….</p>
+<p>服了</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="http://images.lwwww.top/images/20250624104159088.png"
+                        alt="image-20250624104157535"
+                 ></p>
+<p>输入账密以后是对B&#x2F;鉴权服务器的一个登录 然后这个页面是对A也就是要授权&#x2F;使用的网站的一个授权</p>
+<p>他要我b上面得profile和email</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">GET /auth?client_id=a4jt0cmw0ft69srfmpds7&amp;redirect_uri=https://0a62002b03684beb82827a9e00cf0082.web-security-academy.net/oauth-callback&amp;response_type=token&amp;nonce=-847450422&amp;scope=openid%20profile%20email HTTP/2</span><br><span class="line">Host: oauth-0a3300ad03c84b7782bc789802780049.oauth-server.net</span><br><span class="line">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0</span><br><span class="line">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</span><br><span class="line">Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2</span><br><span class="line">Accept-Encoding: gzip, deflate, br</span><br><span class="line">Referer: https://0a62002b03684beb82827a9e00cf0082.web-security-academy.net/</span><br><span class="line">Upgrade-Insecure-Requests: 1</span><br><span class="line">Sec-Fetch-Dest: document</span><br><span class="line">Sec-Fetch-Mode: navigate</span><br><span class="line">Sec-Fetch-Site: cross-site</span><br><span class="line">Priority: u=0, i</span><br><span class="line">Te: trailers</span><br><span class="line">Connection: keep-alive</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>翻数据包，看到&#x2F;authenticate路径下就是我们认证的校验值，需要特别注意的就是我们的这个token值，也就是我画的那张图片，这里就直接校验token值，我们直接把email进行替换，然后再放包发包操作</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="http://images.lwwww.top/images/20250624113017469.png"
+                        alt="image-20250624113013205"
+                 ></p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="http://images.lwwww.top/images/20250624113338786.png"
+                        alt="image-20250624113336546"
+                 ></p>
+<p>唉唉怎么解决啦好厉害</p>
 
                     
                 </div>
@@ -641,7 +681,7 @@
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D-Oauth2-0-%E5%8E%9F%E7%90%86"><span class="nav-text">简单介绍 Oauth2.0 原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Authorization-Code-%E6%8E%88%E6%9D%83%E5%8E%9F%E7%90%86%E5%92%8C%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95"><span class="nav-text">Authorization Code 授权原理和实现方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%88%E6%9D%83%E7%A0%81%E7%B1%BB%E5%9E%8B"><span class="nav-text">授权码类型</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D-Oauth2-0-%E5%8E%9F%E7%90%86"><span class="nav-text">简单介绍 Oauth2.0 原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Authorization-Code-%E6%8E%88%E6%9D%83%E5%8E%9F%E7%90%86%E5%92%8C%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95"><span class="nav-text">Authorization Code 授权原理和实现方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%88%E6%9D%83%E7%A0%81%E7%B1%BB%E5%9E%8B"><span class="nav-text">授权码类型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BP%E9%9D%B6%E5%9C%BA%E6%89%93%E4%B8%80%E4%B8%8B%E2%80%94%E2%80%94%E9%9A%90%E5%BC%8F"><span class="nav-text">BP靶场打一下——隐式</span></a>
     </div>
 </div>
 
@@ -676,7 +716,7 @@
             
                 <span class="count-item border-box word">
                     <span class="item-type border-box">Total words</span>
-                    <span class="item-value border-box word">28k</span>
+                    <span class="item-value border-box word">28.4k</span>
                 </span>
             
 
@@ -824,7 +864,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D-Oauth2-0-%E5%8E%9F%E7%90%86"><span class="nav-text">简单介绍 Oauth2.0 原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Authorization-Code-%E6%8E%88%E6%9D%83%E5%8E%9F%E7%90%86%E5%92%8C%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95"><span class="nav-text">Authorization Code 授权原理和实现方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%88%E6%9D%83%E7%A0%81%E7%B1%BB%E5%9E%8B"><span class="nav-text">授权码类型</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D-Oauth2-0-%E5%8E%9F%E7%90%86"><span class="nav-text">简单介绍 Oauth2.0 原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Authorization-Code-%E6%8E%88%E6%9D%83%E5%8E%9F%E7%90%86%E5%92%8C%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95"><span class="nav-text">Authorization Code 授权原理和实现方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%88%E6%9D%83%E7%A0%81%E7%B1%BB%E5%9E%8B"><span class="nav-text">授权码类型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BP%E9%9D%B6%E5%9C%BA%E6%89%93%E4%B8%80%E4%B8%8B%E2%80%94%E2%80%94%E9%9A%90%E5%BC%8F"><span class="nav-text">BP靶场打一下——隐式</span></a>
     </div>
 </div>
 
